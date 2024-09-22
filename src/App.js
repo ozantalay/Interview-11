@@ -25,13 +25,14 @@ const BuggyButtons = () => {
           {IDs.map((item) => {
             return (
             <div
+           
               key={item}
               style={{
-                marginRight: 10
+                marginRight: 10,
               }}
               id={item}
             >
-              <BuggyButton openCount={openCount} setOpenCount={setOpenCount} />
+              <BuggyButton openCount={openCount} setOpenCount={setOpenCount}   />
             </div>)
           })}
         </div>
@@ -58,9 +59,12 @@ const BuggyButton = ({openCount, setOpenCount}) => {
     />
   ) : (
     <button
+        className="border-4 border-#84cc16-300 rounded-[5px] bg-orange-400 text-white p-1"
+        style={{ borderColor: '#a3e635' }}
       onClick={() => {
         setOpenCount((p) => p + 1);
         setIsOpen(true);
+        
       }}
     >
       TAVŞAN AÇ
