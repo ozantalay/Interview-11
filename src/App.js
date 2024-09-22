@@ -23,6 +23,7 @@ const BuggyButtons = () => {
           style={{ display: "flex", justifyContent: "center", marginTop: 50 }}
         >
           {IDs.map((item) => {
+            return (
             <div
               key={item}
               style={{
@@ -31,7 +32,7 @@ const BuggyButtons = () => {
               id={item}
             >
               <BuggyButton openCount={openCount} setOpenCount={setOpenCount} />
-            </div>;
+            </div>)
           })}
         </div>
         <div style={{ alignSelf: "center", marginTop: 20 }}>
@@ -42,7 +43,7 @@ const BuggyButtons = () => {
   );
 };
 
-const BuggyButton = (openCount, setOpenCount) => {
+const BuggyButton = ({openCount, setOpenCount}) => {
   const [isOpen, setIsOpen] = useState(false);
   return isOpen ? (
     <img
